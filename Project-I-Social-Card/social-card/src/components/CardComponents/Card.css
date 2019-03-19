@@ -1,0 +1,21 @@
+.cardContainer {
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  grid-column: 2 / 3;
+}
+
+.react-logo {
+  width: 100%;
+}
+
+.cardContent {
+  padding: 0 20px;
+}
+
+.cardContent p:nth-child(1) {
+  font-weight: 900;
+}
+
+.cardContent p:nth-child(3) {
+  color: grey;
+}
