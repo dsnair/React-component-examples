@@ -1,6 +1,6 @@
 import React from 'react'
 
-class ToDoForm extends React.Component {
+class TodoForm extends React.Component {
   render() {
     return (
       <form>
@@ -12,4 +12,4 @@ class ToDoForm extends React.Component {
   }
 }
 
-export default ToDoForm
+export default TodoForm
