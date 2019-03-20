@@ -9,10 +9,20 @@ class App extends React.Component {
     }
   }
 
+  handleText = event =>
+    this.setState({
+      text: event.target.value
+    })
+
   render() {
     return (
       <React.Fragment>
-        <TodoForm />
+        <TodoForm handleText={this.handleText}/>
+        {/* <form>
+          <input placeholder="Add Todo" onChange={this.handleText} />
+          <button>Add Todo</button>
+          <button>Clear Completed</button>
+        </form> */}
       </React.Fragment>
     )
   }
