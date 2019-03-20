@@ -5,7 +5,7 @@ class ToDoForm extends React.Component {
     return (
       <form>
         <input placeholder="Add Todo" onChange={this.props.handleText} />
-        <button>Add Todo</button>
+        <button onClick={this.props.handleAdd}>Add Todo</button>
         <button>Clear Completed</button>
       </form>
     )
