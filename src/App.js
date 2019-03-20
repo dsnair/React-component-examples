@@ -30,10 +30,21 @@ class App extends React.Component {
     })
   }
 
+  handleCompleted = id => {
+    const newTodo = [...this.state.todo]
+    newTodo.map(todo => {
+      return todo.id === id ? (todo.completed = !todo.completed) : todo
+    })
+    this.setState({ todo: newTodo })
+  }
+
   render() {
     return (
       <React.Fragment>
-        <TodoList todo={this.state.todo} />
+        <TodoList
+          todo={this.state.todo}
+          handleCompleted={this.handleCompleted}
+        />
         <TodoForm
           handleText={this.handleText}
           handleAdd={this.handleAdd}

@@ -1,7 +1,11 @@
 import React from 'react'
 
 const Todo = props => {
-  return <input readOnly value={props.todo.task} />
+  return (
+    <div onClick={() => props.handleCompleted(props.todo.id)}>
+      {props.todo.task}
+    </div>
+  )
 }
 
 export default Todo
