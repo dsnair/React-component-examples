@@ -2,6 +2,9 @@ import React from 'react'
 import TodoForm from './components/TodoForm'
 import TodoList from './components/TodoList'
 
+import './App.css'
+import './components/Todo.css'
+
 class App extends React.Component {
   constructor(props) {
     super(props)
