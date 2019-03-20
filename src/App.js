@@ -25,7 +25,8 @@ class App extends React.Component {
       completed: false
     }
     this.setState({
-      todo: [...this.state.todo, newTodo]
+      todo: [...this.state.todo, newTodo],
+      text: ''
     })
   }
 
@@ -33,7 +34,11 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <TodoList todo={this.state.todo} />
-        <TodoForm handleText={this.handleText} handleAdd={this.handleAdd} />
+        <TodoForm
+          handleText={this.handleText}
+          handleAdd={this.handleAdd}
+          value={this.state.text}
+        />
       </React.Fragment>
     )
   }

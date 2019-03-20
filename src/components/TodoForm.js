@@ -4,7 +4,11 @@ class TodoForm extends React.Component {
   render() {
     return (
       <form>
-        <input placeholder="Add Todo" onChange={this.props.handleText} />
+        <input
+          onChange={this.props.handleText}
+          value={this.props.value}
+          placeholder="Add Todo"
+        />
         <button onClick={this.props.handleAdd}>Add Todo</button>
         <button>Clear Completed</button>
       </form>
