@@ -10,7 +10,7 @@ class TodoForm extends React.Component {
           placeholder="Add Todo"
         />
         <button onClick={this.props.handleAdd}>Add Todo</button>
-        <button>Clear Completed</button>
+        <button onClick={this.props.handleClear}>Clear Completed</button>
       </form>
     )
   }

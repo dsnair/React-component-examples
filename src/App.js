@@ -41,6 +41,13 @@ class App extends React.Component {
     this.setState({ todo: newTodo })
   }
 
+  handleClear = () => {
+    const newTodo = this.state.todo.filter(todo => todo.completed === false)
+    this.setState({
+      todo: newTodo
+    })
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -49,9 +56,10 @@ class App extends React.Component {
           handleCompleted={this.handleCompleted}
         />
         <TodoForm
+          value={this.state.text}
           handleText={this.handleText}
           handleAdd={this.handleAdd}
-          value={this.state.text}
+          handleClear={this.handleClear}
         />
       </React.Fragment>
     )
