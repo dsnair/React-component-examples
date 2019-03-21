@@ -9,8 +9,8 @@ class TodoForm extends React.Component {
           value={this.props.value}
           placeholder="Add Todo"
         />
-        <button onClick={this.props.handleAdd}>Add Todo</button>
-        <button onClick={this.props.handleClear}>Clear Completed</button>
+        <button onClick={this.props.handleAdd}>Add</button>
+        <button onClick={this.props.handleClear}>Clear</button>
       </form>
     )
   }

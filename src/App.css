@@ -1,9 +1,11 @@
 body {
-  width: 400px;
-  height: 50vh;
+  width: 800px;
   margin: 20px auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+}
+
+.app {
+  height: 50vh;
+  padding: 30px;
+  border: 1px solid lightgrey;
+  border-radius: 30px;
 }

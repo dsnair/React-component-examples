@@ -50,18 +50,18 @@ class App extends React.Component {
 
   render() {
     return (
-      <React.Fragment>
-        <TodoList
-          todo={this.state.todo}
-          handleCompleted={this.handleCompleted}
-        />
+      <div className="app">
         <TodoForm
           value={this.state.text}
           handleText={this.handleText}
           handleAdd={this.handleAdd}
           handleClear={this.handleClear}
         />
-      </React.Fragment>
+        <TodoList
+          todo={this.state.todo}
+          handleCompleted={this.handleCompleted}
+        />
+      </div>
     )
   }
 }
