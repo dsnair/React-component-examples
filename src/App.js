@@ -27,10 +27,11 @@ class App extends React.Component {
       id: Date.now(),
       completed: false
     }
-    this.setState({
-      todo: [...this.state.todo, newTodo],
-      text: ''
-    })
+    newTodo.task &&
+      this.setState({
+        todo: [...this.state.todo, newTodo],
+        text: ''
+      })
   }
 
   handleCompleted = id => {
