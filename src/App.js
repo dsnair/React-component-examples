@@ -41,7 +41,8 @@ class App extends React.Component {
     this.setState({ todo: newTodo })
   }
 
-  handleClear = () => {
+  handleClear = event => {
+    event.preventDefault()
     const newTodo = this.state.todo.filter(todo => todo.completed === false)
     this.setState({
       todo: newTodo
