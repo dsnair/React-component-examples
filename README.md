@@ -1,67 +1,118 @@
-# React-Todo
+# Sprint Challenge: React - Star Wars
 
-- At this point you have become familiar with the DOM and have built out User Interfaces using HTML and CSS and some JavaScript using custom components. And you've even had some practice working with React at a basic level. Now we're going to start adding some functionality to that work-flow. It's one thing to be able to build UI components using react, but what about the interactivity of those components?
-
-## Initializing the project.
-
-- `Fork and clone` this project and cd into your cloned version.
-- `yarn install` will pull in all the node_modules you need.
-- `yarn start` will start a development server on your `http://localhost:3000`.
-  - If yarn asks you to select different port with some error message, just select `Y` and it will pull it up on port 3001. This simply means you have a development server up and running on that port already.
+This challenge allows you to practice the concepts and techniques learned over the past Sprint and apply them in a concrete project. This Sprint explored ReactJS, Functional Components and Class Components. In your challenge for this Sprint, you will demonstrate proficiency by creating an application that uses ReactJS to consume live data retrieved from the World Wide Web and style that data nicely on the page.
 
 ## Instructions
 
-- Your job is to write the components to complete the Todo List application.
-- Your todo list should be fully functional and you should design it however you'd like. Feel free to get creative here. I have supplied a gif for you to see what the MVP functionality is required to look like over the course of the two days.
+**Read these instructions carefully. Understand exactly what is expected _before_ starting this Sprint Challenge.**
 
-![Todo App MVP](todo.gif)
+This is an individual assessment. All work must be your own. Your challenge score is a measure of your ability to work independently using the material covered through this sprint. You need to demonstrate proficiency in the concepts and objectives introduced and practiced in preceding days.
 
-- Your todo data should be an array of objects that look a lot like this:
+You are not allowed to collaborate during the Sprint Challenge. However, you are encouraged to follow the twenty-minute rule and seek support from your PM and Instructor in your cohort help channel on Slack. Your work reflects your proficiency ReactJS Fundamentals and your command of the concepts and techniques in the Function Components and Class Components.
+
+You have three hours to complete this challenge. Plan your time accordingly.
+
+## Commits
+
+Commit your code regularly and meaningfully. This helps both you (in case you ever need to return to old code for any number of reasons and your project manager.
+
+## Description
+
+In this challenge, create a web page that presents a styled list of Star Wars characters. Being able to render out data to a web page is a large part of what JavaScript developers do, this challenge assesses your ability to achieve such a task.
+
+## Self-Study/Essay Questions
+
+Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
+
+- [ ] What is React JS and what problems does it try and solve? Support your answer with concepts introduced in class and from your personal research on the web.
+
+- [ ] What does it mean to _think_ in react?
+
+- [ ] Describe state.
+
+- [ ] Describe props.
+
+## Project Set Up
+
+Follow these steps to set up and work on your project:
+
+- Create a forked copy of this project.
+- Add PM as collaborator on Github.
+- Clone your OWN version of Repo (Not Lambda's by mistake!).
+- Create a new Branch on the clone: git checkout -b `<firstName-lastName>`.
+- Change directories into `./starwars` (`cd starwars`) and run `yarn install` to retrieve all needed dependencies.
+- Once you have installed the _node_modules_, run `yarn start or` to get your server up and running.
+- With the server up and running, open Chrome and head over to `localhost:3000` and view your beautiful app. Maybe it's not _that_ pretty... _yet_, your goal is to ensure this project becomes a thing of beauty.
+  Follow these steps for completing your project.
+- Implement the project on this Branch, committing changes regularly.
+- Push commits: git push origin `<firstName-lastName>`.
+
+Follow these steps for completing your project:
+
+- Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's Repo).
+- Add your Project Manager as a Reviewer on the Pull-request
+- PM then will count the HW as done by merging the branch back into master.
+
+Please note:
+
+- `componentDidMount()` calls an open sourced API inside of `App.js` and saves the results of that API on state.
+- Upon opening the `App.js` file you'll see that there is code written out that looks like this:
 
 ```js
-[
-  {
-    task: 'Organize Garage',
-    id: 1528817077286,
-    completed: false
-  },
-  {
-    task: 'Bake Cookies',
-    id: 1528817084358,
-    completed: false
-  }
-];
+componentDidMount() {
+  this.getCharacters('https://swapi.co/api/people');
+}
+
+getCharacters = URL => {
+  fetch(URL)
+    .then(res => {
+      return res.json();
+    })
+    .then(data => {
+      this.setState({ starwarsChars: data.results });
+    })
+    .catch(err => {
+      throw new Error(err);
+    });
+};
 ```
 
-- The `task` field is the todo title that will be shown to the user.
-- The `completed` field should default to `false` and will be the field that we toggle when we complete a todo.
-- The `id` field is a unique `Time Stamp` that will be assigned by `Date.now()`.
+- You don't need to understand what that code is doing fully, other than the fact that it is setting your state with Star Wars Character Data.
+- View your `App` component's `state` by opening the Chrome `React Dev Tools` to peek at the data set. At this point you will know what to do from here.
 
-#### Day 1 Challenges
+Your data set will look like this:
 
-- **Don't focus on styling yet**. We want you to worry about function over form today.
-- Your todo list should display a list of todos, an input field, a submit button, and a clear all button.
-- Be sure to use the given files for building out these components.
-- `<App />` will hold all the data needed for this project. It will also be the container for your Todo Components.
-  - All of your application data will be stored here on `<App />`.
-  - All of your `handler` functions should live here on `<App />`.
-- `<TodoList />` receives your Todos array and iterates over the list generating a new `<Todo />` for each element in the array.
-- `<Todo />` is a component that takes in the `todo` data and displays the task to the screen.
-- `<TodoForm>` will hold your input field and your `Add Todo` and `Clear Completed` buttons.
-  - Your input field should take in user input, and allow a user to press `Enter` or click on the `Submit Button` to add a todo to your list.
-  - Once a todo is submitted, the Todo List should re-render and show the added todo.
+![Star Wars state data](starwars_data.png)
 
-#### Day 2 Challenges
+- Based on knowledge gained over the past Sprint
 
-- Add the functionality to toggle your todo's completed flag from `false` to `true`.
-  - Once a todo is completed, be sure to demonstrate to the user that the todo is completed by adding a line-through style property if the completed flag is true.
-- Add the ability to remove any todos that you have completed. `.filter` will be your best friend here. When a user clicks on the `Clear Completed` button call your handler function that will filter out any todos that have the completed flag toggled to `true`.
-- **Now is the time to style** Take your time to make this an app that you can be proud of.
+## Minimum Viable Product
 
-#### Stretch Problems
+Your finished project must include all of the following requirements:
 
-- **Persist your data** in `window.localStorage()` hint: you may have to pass your data to a stringifier to get it to live inside the `localStorage()` of the browser. This will cause it to persist past the page refresh.
+- [ ] A list of Star Wars Characters rendered to the screen.
+- [ ] You must have at least one list element for each star wars character in the data set.
+- [ ] The list elements must all be styled beyond the basic
 
-- **Search Functionality** Add a input bar that allows you to search through your tasks and only show the ones that match the search input.
+In your solution, it is essential that you follow best practices and produce clean and professional results. Schedule time to review, refine, and assess your work and perform basic professional polishing including spell-checking and grammar-checking on your work. It is better to submit a challenge that meets MVP than one that attempts to much and does not.
 
-- **Hosting** Create a [Netlify Account](https://www.netlify.com/) and follow the tutorial on how to host your shiny new todo app on the world wide web.
+## Stretch Problems
+
+- [ ] Build a pagination system that will allow you to load the next page of data
+
+- Take note on the data that's coming back from the server call in our `getCharacters`
+- console.log() the data coming back from the server.
+- Notice that there are `next` `previous` fields that give you a URL.
+- You have a function that will get chars called `getCharacters` you'll want to just call this function and supply it with the proper fields. You'll need to set this up on state to do this.
+
+```js
+ .then(data => {
+    console.log(data); <-- Log data here to find the fields you will need.
+    this.setState({ starwarsChars: data.results });
+  })
+```
+
+- [ ] Build another app from scratch that looks very similar to this one. Inside of your main `App` component fetch some data in this same fashion from this url `https://dog.ceo/dog-api/#all` you'll have to follow the documentation at that website and figure out how to change up the code you've seen here in this Star Wars app in order to properly fetch the data and store it on Component State.
+
+- Be mindful of the `fetch API` that is now built into most modern browsers [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch).
+- Your data coming back from Dogs should be formatted in JSON format.
