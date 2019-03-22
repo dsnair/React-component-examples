@@ -29,9 +29,32 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        <h1 className="header">React Wars</h1>
+        <h1>React Wars</h1>
         {this.state.starwarsChars.map((char, index) => (
-          <section key={index}>{char.name}</section>
+          <table key={index}>
+            <tbody>
+              <tr>
+                <td>Name</td>
+                <td>Eye color</td>
+                <td>Hair color</td>
+                <td>Skin color</td>
+                <td>Height</td>
+                <td>Mass</td>
+                <td>Gender</td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr>
+                <td>{char.name}</td>
+                <td>{char.eye_color}</td>
+                <td>{char.hair_color}</td>
+                <td>{char.skin_color}</td>
+                <td>{char.height}</td>
+                <td>{char.mass}</td>
+                <td>{char.gender}</td>
+              </tr>
+            </tbody>
+          </table>
         ))}
       </div>
     )

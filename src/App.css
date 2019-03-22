@@ -1,7 +1,14 @@
-.app {
-  text-align: center;
-}
-.header {
+h1 {
   color: #443e3e;
   text-shadow: 1px 1px 5px #fff;
+}
+
+table {
+  display: table;
+}
+table tbody {
+  display: table-cell;
+}
+table tr td {
+  display: block;
 }
