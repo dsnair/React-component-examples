@@ -24,13 +24,22 @@ In this challenge, create a web page that presents a styled list of Star Wars ch
 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
-- [ ] What is React JS and what problems does it try and solve? Support your answer with concepts introduced in class and from your personal research on the web.
+- [x] What is ReactJS? What problems does it try to solve? Support your answer with concepts introduced in class and from your personal research on the web.
 
-- [ ] What does it mean to _think_ in react?
+> ReactJS is a JS, single-page application library for building user interfaces. With ReactJS, we can collect user-fed data at the View layer of MVC.
 
-- [ ] Describe state.
+- [x] What does it mean to _think_ in react?
 
-- [ ] Describe props.
+> 1. Start with creating a mock of your app.
+> 2. Break down UI into small, independent, resuable components and start identifying the component hierrchy.
+
+- [x] Describe state.
+
+> State holds data _within_ the component where it lives.
+
+- [x] Describe props.
+
+> Props pass down data to the child components.
 
 ## Project Set Up
 
