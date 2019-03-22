@@ -50,7 +50,7 @@ Follow these steps to set up and work on your project:
 Follow these steps for completing your project:
 
 - Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's Repo).
-- Add your Project Manager as a Reviewer on the Pull-request
+- Add your Project Manager as a Reviewer on the Pull Request.
 - PM then will count the HW as done by merging the branch back into master.
 
 Please note:
@@ -84,7 +84,7 @@ Your data set will look like this:
 
 ![Star Wars state data](starwars_data.png)
 
-- Based on knowledge gained over the past Sprint
+- Based on knowledge gained over the past Sprint.
 
 ## Minimum Viable Product
 
@@ -92,13 +92,13 @@ Your finished project must include all of the following requirements:
 
 - [x] A list of Star Wars Characters rendered to the screen.
 - [x] You must have at least one list element for each star wars character in the data set.
-- [ ] The list elements must all be styled beyond the basic
+- [x] The list elements must all be styled beyond the basic.
 
 In your solution, it is essential that you follow best practices and produce clean and professional results. Schedule time to review, refine, and assess your work and perform basic professional polishing including spell-checking and grammar-checking on your work. It is better to submit a challenge that meets MVP than one that attempts to much and does not.
 
 ## Stretch Problems
 
-- [ ] Build a pagination system that will allow you to load the next page of data
+- [ ] Build a pagination system that will allow you to load the next page of data.
 
 - Take note on the data that's coming back from the server call in our `getCharacters`
 - console.log() the data coming back from the server.

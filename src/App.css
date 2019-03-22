@@ -1,14 +1,40 @@
-h1 {
-  color: #443e3e;
-  text-shadow: 1px 1px 5px #fff;
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  color: floralwhite;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 table {
   display: table;
+  width: 300px;
+  height: 250px;
+  margin: 20px;
+  padding: 0 20px;
+  border: 1px solid grey;
+  border-radius: 30px;
+  background-color: rgb(64, 64, 64, 0.5);
 }
-table tbody {
+
+tbody {
   display: table-cell;
+  width: 50%;
 }
-table tr td {
+
+tr {
   display: block;
+}
+
+td {
+  display: block;
+  padding: 5px 0;
 }
