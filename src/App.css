@@ -38,3 +38,13 @@ td {
   display: block;
   padding: 5px 0;
 }
+
+footer {
+  width: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 20px 0;
+  font-size: 30px;
+  cursor: pointer;
+}

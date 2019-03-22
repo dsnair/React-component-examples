@@ -1,16 +1,20 @@
 import React, { Component } from 'react'
 import './App.css'
 
+const URL = 'https://swapi.co/api/people/'
+
 class App extends Component {
   constructor() {
     super()
     this.state = {
-      starwarsChars: []
+      starwarsChars: [],
+      next: '',
+      previous: ''
     }
   }
 
   componentDidMount() {
-    this.getCharacters('https://swapi.co/api/people/')
+    this.getCharacters(URL)
   }
 
   getCharacters = URL => {
@@ -19,7 +23,13 @@ class App extends Component {
         return res.json()
       })
       .then(data => {
-        this.setState({ starwarsChars: data.results })
+        console.log(data)
+        
+        this.setState({
+          starwarsChars: data.results,
+          next: data.next === null ? URL : data.next,
+          previous: data.previous === null ? URL : data.previous
+        })
       })
       .catch(err => {
         throw new Error(err)
@@ -30,7 +40,8 @@ class App extends Component {
     return (
       <div className="app">
         <h1>React Wars</h1>
-        <div className="cards">
+        
+        <section className="cards">
           {this.state.starwarsChars.map((char, index) => (
             <table key={index}>
               <tbody>
@@ -57,7 +68,18 @@ class App extends Component {
               </tbody>
             </table>
           ))}
-        </div>
+        </section>
+
+        <footer>
+          <i
+            className="fas fa-chevron-circle-left"
+            onClick={() => this.getCharacters(this.state.previous)}
+          />
+          <i
+            className="fas fa-chevron-circle-right"
+            onClick={() => this.getCharacters(this.state.next)}
+          />
+        </footer>
       </div>
     )
   }
