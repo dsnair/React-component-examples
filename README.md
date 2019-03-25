@@ -1,67 +1,65 @@
-# React-Todo
+# React-Insta-Clone
 
-- At this point you have become familiar with the DOM and have built out User Interfaces using HTML and CSS and some JavaScript using custom components. And you've even had some practice working with React at a basic level. Now we're going to start adding some functionality to that work-flow. It's one thing to be able to build UI components using react, but what about the interactivity of those components?
+## Introduction
 
-## Initializing the project.
+- The purpose of this project is to continue building on your knowledge of React that you have gained thus far.
 
-- `Fork and clone` this project and cd into your cloned version.
-- `yarn install` will pull in all the node_modules you need.
-- `yarn start` will start a development server on your `http://localhost:3000`.
-  - If yarn asks you to select different port with some error message, just select `Y` and it will pull it up on port 3001. This simply means you have a development server up and running on that port already.
+  - Here, you'll be implementing a lot of the same concepts that you have been in previous projects, in a very similar fashion.
+  - The main difference this time around is that you'll be using the `create-react-app (CRA)` utility to generate your React project for you.
+  - Don't worry about all of the extra files that you may not understand which will be present inside your React application that you will build with CRA.
+  - The overall structure of the project remains exactly the same as what you worked with in Todo-React.
 
-## Instructions
+- This project will be worked on throughout the entire week.
 
-- Your job is to write the components to complete the Todo List application.
-- Your todo list should be fully functional and you should design it however you'd like. Feel free to get creative here. I have supplied a gif for you to see what the MVP functionality is required to look like over the course of the two days.
+  - Each day as you learn new things, you will use that knowledge to build and enhance this project a little more.
+  - You will use the same repo throughout the whole week, adding more code, and changing things here and there as you learn new principles and techniques.
+  - It will be important to communicate any problems you're having to your Project Manager so that we can make sure to get you un-stuck along the way as soon as possible.
+  - The goal is to finish each day's objectives, and have a working project to start with on the next day.
+  - If you don't get the daily objectives, don't panic, some days will be easier for you than others and some days will be harder.
+  - The hope is that by the end of the week, you'll have seen a react application come to life, and you'll start to see how react works at a higher level.
 
-![Todo App MVP](todo.gif)
+- For this project, you'll be building a simple Instagram clone using React.
+- There is a file provided called `dummy-data.js` that contains some mock data. Each object in the mock data represents a faux Instagram post.
+- Your React application will receive faux post data and render each as a separate Instagram post.
 
-- Your todo data should be an array of objects that look a lot like this:
+## Day I
 
-```js
-[
-  {
-    task: 'Organize Garage',
-    id: 1528817077286,
-    completed: false
-  },
-  {
-    task: 'Bake Cookies',
-    id: 1528817084358,
-    completed: false
-  }
-];
-```
+### Focus (Day I)
 
-- The `task` field is the todo title that will be shown to the user.
-- The `completed` field should default to `false` and will be the field that we toggle when we complete a todo.
-- The `id` field is a unique `Time Stamp` that will be assigned by `Date.now()`.
+- Demonstrate the the ability to use create-react-app to boilerplate a react application
+- Describe and be able to use PropTypes to 'type check' specific data being passed down to a child component
+- Demonstrate the ability to use defaultProps in a React component
 
-#### Day 1 Challenges
+### Project Setup
 
-- **Don't focus on styling yet**. We want you to worry about function over form today.
-- Your todo list should display a list of todos, an input field, a submit button, and a clear all button.
-- Be sure to use the given files for building out these components.
-- `<App />` will hold all the data needed for this project. It will also be the container for your Todo Components.
-  - All of your application data will be stored here on `<App />`.
-  - All of your `handler` functions should live here on `<App />`.
-- `<TodoList />` receives your Todos array and iterates over the list generating a new `<Todo />` for each element in the array.
-- `<Todo />` is a component that takes in the `todo` data and displays the task to the screen.
-- `<TodoForm>` will hold your input field and your `Add Todo` and `Clear Completed` buttons.
-  - Your input field should take in user input, and allow a user to press `Enter` or click on the `Submit Button` to add a todo to your list.
-  - Once a todo is submitted, the Todo List should re-render and show the added todo.
+- If you so choose you may install `create-react-app` globally by running `yarn global add create-react-app`.
+  - If you have CRA installed then run `create-react-app instagram` to create your starter application with the name `instagram`.
+  - If you don't have CRA installed then run `npx create-react-app instagram` to create your starter application with the name `instagram`.
+- Create a `components` directory inside the `src` directory, and then create a sub-directory called `SearchBar`, another one called `PostContainer`, and lastly one called `CommentSection`, all inside the `src` directory. Each of these directories should contain the component file as well as the CSS for their respective components. You'll also want to put any other components that coincide with your respective container components inside of these directories.
+![folder_structure](/assets/folder_structure.png)
 
-#### Day 2 Challenges
+### Tasks (Day I)
 
-- Add the functionality to toggle your todo's completed flag from `false` to `true`.
-  - Once a todo is completed, be sure to demonstrate to the user that the todo is completed by adding a line-through style property if the completed flag is true.
-- Add the ability to remove any todos that you have completed. `.filter` will be your best friend here. When a user clicks on the `Clear Completed` button call your handler function that will filter out any todos that have the completed flag toggled to `true`.
-- **Now is the time to style** Take your time to make this an app that you can be proud of.
+- There are three major container components that you'll need to implement for this project: the Search Bar, the Post Container, and the Comment Section.
+- At the end of Day I there will be a single instance of the Search Bar being rendered at the top of the page, as well as a Post Container and a Comment Section for every piece of mock data in the `dummy-data.js` file.
+- The root App component of your application should import the dummy data from the `dummy-data.js` file with `import dummyData from './dummy-data';` and iterate over said data, passing each individual object as a prop to an instance of `PostContainer`.
+- Each `PostContainer` component will then pass the array of comments on each post object as a prop to an instance of the `CommentSection` component.
+- The `CommentSection` component will receive the array of comments as props and render a `Comment` component with the username of the poster as well as the post's text. Additionally, there should be an input box that allows users to submit a new comment for any post. We'll work on posting new comments tomorrow.
+- Be sure to check the `Types` of the data you are passing around as props in the components that will be using props to present data as DOM elements. This should be linked to your `Comment` component that `Comment Section` will render and potentially to your `Post` component that `Post Container` will render.
+- You are free to leverage the Bootstrap library for this project for the purposes of theming and styling. I recommend the awesome [reactstrap](https://reactstrap.github.io/) library, which is a library of Bootstrap components that have been implemented using React, so they're really easy to just drop straight into React projects.
+- In addition to Bootstrap for theming, you'll want to add your own styles via CSS. To keep things organized, have the CSS file that corresponds with a component live in the same directory as the component file.
 
-#### Stretch Problems
+---
 
-- **Persist your data** in `window.localStorage()` hint: you may have to pass your data to a stringifier to get it to live inside the `localStorage()` of the browser. This will cause it to persist past the page refresh.
+Your search bar header should look something like this:
+![search bar](/assets/search_bar.png)
 
-- **Search Functionality** Add a input bar that allows you to search through your tasks and only show the ones that match the search input.
+---
 
-- **Hosting** Create a [Netlify Account](https://www.netlify.com/) and follow the tutorial on how to host your shiny new todo app on the world wide web.
+Your post container should look something like this:
+![insta post](/assets/post.png)
+
+### Stretch Problems (Day I)
+
+- Implement the ability to comment on a post with the `Add a comment...` input.
+- Use the [moment.js](https://momentjs.com/) library dynamically format the timestamp into a human-readable format like how it is being displayed in the screenshot.
