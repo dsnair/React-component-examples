@@ -17,12 +17,27 @@ class App extends Component {
     })
   }
 
+  incrementLikes = index => {
+    const newData = [...this.state.data]
+    newData.splice(index, 1, {
+      ...newData[index],
+      likes: newData[index].likes + 1
+    })
+    this.setState({
+      data: [...newData]
+    })
+  }
+
   render() {
     return (
       <>
         <SearchBar />
-        {data.map((item, index) => (
-          <PostsContainer post={item} key={index} />
+        {this.state.data.map((item, index) => (
+          <PostsContainer
+            post={item}
+            incrementLikes={() => this.incrementLikes(index)}
+            key={index}
+          />
         ))}
       </>
     )

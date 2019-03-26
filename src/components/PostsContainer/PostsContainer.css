@@ -26,3 +26,26 @@ img {
   height: 500px;
   object-fit: cover;
 }
+
+.commentscontainer {
+  padding: 20px;
+}
+
+.far {
+  margin-right: 10px;
+  font-size: 24px;
+  color: dimgrey;
+}
+
+.fa-heart:hover {
+  color: red;
+  cursor: pointer;
+}
+
+.likes {
+  font-weight: 500;
+}
+
+.timestamp {
+  color: grey;
+}

@@ -1,23 +1,5 @@
-.commentscontainer {
-  padding: 20px;
-}
-
-.far {
-  margin-right: 10px;
-  font-size: 24px;
-  color: dimgrey;
-}
-
-.likes {
-  font-weight: 500;
-}
-
 .handlename {
   font-weight: 900;
-}
-
-.timestamp {
-  color: grey;
 }
 
 textarea {
