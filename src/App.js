@@ -7,6 +7,16 @@ import PostsContainer from './components/PostsContainer/PostsContainer'
 import './App.css'
 
 class App extends Component {
+  state = {
+    data: []
+  }
+
+  componentDidMount() {
+    this.setState({
+      data
+    })
+  }
+
   render() {
     return (
       <>

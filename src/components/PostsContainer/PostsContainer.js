@@ -1,16 +1,15 @@
 import React from 'react'
 
-import Business from './Business'
-import CommentsSection from './CommentsSection/CommentsSection'
+import CommentsSection from './CommentsSection'
 import './PostsContainer.css'
 
 const PostsContainer = props => {
   return (
     <div className="postscontainer">
-      <Business
-        avatar={props.post.thumbnailUrl}
-        username={props.post.username}
-      />
+      <header>
+        <img src={props.post.thumbnailUrl} alt="avatar" className="avatar" />
+        <p className="businessname">{props.post.username}</p>
+      </header>
       <img src={props.post.imageUrl} alt="cover" />
       <CommentsSection
         comments={props.post.comments}
