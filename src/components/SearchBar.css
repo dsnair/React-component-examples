@@ -1,0 +1,36 @@
+.searchbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 100px;
+}
+
+.instagram {
+  font-size: 24px;
+}
+
+form {
+  display: flex;
+  align-content: center;
+  width: 300px;
+  height: 30px;
+}
+
+.fa-search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background: lightslategray;
+  color: white;
+}
+
+input {
+  width: 270px;
+  padding: 0 5px;
+  border: 1px solid lightslategray;
+  outline: none;
+  font-size: 14px;
+}
