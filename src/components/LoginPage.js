@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
+import './LoginPage.css'
 
 class LoginPage extends Component {
   state = {
-    username: null
+    username: ''
   }
 
   onChange = e => {
@@ -15,11 +16,16 @@ class LoginPage extends Component {
 
   render() {
     return (
-      <form>
-        <input onChange={this.onChange} type="text" placeholder="Username" />
-        <input type="password" placeholder="Password" />
-        <button onClick={this.onClick}>Login</button>
-      </form>
+      <div className="loginFormContainer">
+        <p>Welcome to InstaClone!</p>
+        <form className="loginForm">
+          <input onChange={this.onChange} type="text" placeholder="Username" />
+          <input type="password" placeholder="Password" />
+          <button onClick={this.onClick} className="loginBtn">
+            Login
+          </button>
+        </form>
+      </div>
     )
   }
 }

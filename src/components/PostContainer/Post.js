@@ -15,7 +15,7 @@ const Post = props => {
 
       <div className="commentcontainer">
         <p className="likes">
-          <i className="far fa-heart" onClick={props.incrementLikes} />
+          <i onClick={props.incrementLikes} className="far fa-heart" />
           {props.post.likes} likes
         </p>
         {props.post.comments.map((item, index) => (

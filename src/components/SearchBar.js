@@ -4,7 +4,9 @@ import './SearchBar.css'
 class SearchBar extends Component {
   onClick = () => {
     localStorage.removeItem('username')
+    window.location.reload();
   }
+
   render() {
     return (
       <div className="searchbar">

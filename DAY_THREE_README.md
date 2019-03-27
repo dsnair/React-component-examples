@@ -17,7 +17,7 @@
 
 #### Tasks (Day III)
 
-- [ ] Create a `<PostsPage />` component in your `components/PostsContainer` directory.
+- [x] Create a `<PostsPage />` component in your `components/PostsContainer` directory.
 
   - You'll have to move a lot of what is rendered in `app.js` to this new component.
   - In app.js, render the `PostsPage` component.
@@ -66,7 +66,7 @@ const withAuthenticate = App =>
 
 #### Stretch Problems (Day III)
 
-- Now that you have a user set in `localStorage`, go ahead and use that `username` when a user posts a comment to make it so the logged in user is the one commenting on the posts.
+- [ ] Now that you have a user set in `localStorage`, use that `username` to be the one commenting on the posts.
 - Styled-Components
 
   - Watch this video about [styled-components](https://youtu.be/bIK2NwoK9xk) in its entirety.

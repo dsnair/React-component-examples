@@ -42,4 +42,10 @@
   color: palevioletred;
   font-size: 14px;
   font-weight: 500;
+  outline: none;
+}
+
+.logoutBtn:hover {
+  background-color: rgb(219, 112, 147, 0.1);
+  cursor: pointer;
 }
