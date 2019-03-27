@@ -13,7 +13,7 @@ const CommentsSection = props => {
       <form onSubmit={props.onSubmitNewComment} className="commentForm">
         <input
           onChange={props.onChangeNewComment}
-          value={props.text}
+          value={props.newCommentText}
           type="text"
           className="commentInput"
           placeholder="Add a comment"

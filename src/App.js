@@ -8,12 +8,8 @@ import './App.css'
 class App extends Component {
   state = {
     data: [],
-    queriedData: [],
     query: '',
-    newComment: {
-      username: 'divya',
-      text: ''
-    }
+    newCommentText: ''
   }
 
   componentDidMount() {
@@ -24,18 +20,24 @@ class App extends Component {
 
   onChangeNewComment = e => {
     this.setState({
-      newComment: {
-        ...this.state.newComment,
-        text: e.target.value
-      }
+      newCommentText: e.target.value
     })
   }
 
   onSubmitNewComment = (e, id) => {
     e.preventDefault()
-    let newState = this.state
-    newState.data[id].comments.push(newState.newComment)
-    this.setState(newState)
+    const newData = [...this.state.data]
+    newData.splice(id, 1, {
+      ...newData[id],
+      comments: [
+        ...newData[id].comments,
+        {
+          username: 'divya',
+          text: this.state.newCommentText
+        }
+      ]
+    })
+    this.setState({ data: [...newData], newCommentText: '' })
   }
 
   incrementLikes = id => {
@@ -51,37 +53,29 @@ class App extends Component {
 
   searchPost = e => {
     const query = e.target.value
-    const queriedData = this.state.data.filter(post =>
-      post.username.includes(this.state.query)
-    )
     this.setState({
-      query,
-      queriedData
+      query
     })
   }
 
   render() {
+    const queriedData = this.state.data.filter(post =>
+      post.username.includes(this.state.query)
+    )
+
     return (
       <>
         <SearchBar searchPost={this.searchPost} />
-        {this.state.query
-          ? this.state.queriedData.map(item => (
-              <PostsContainer
-                post={item}
-                incrementLikes={() => this.incrementLikes(item.id)}
-                key={item.id}
-              />
-            ))
-          : this.state.data.map(item => (
-              <PostsContainer
-                post={item}
-                incrementLikes={() => this.incrementLikes(item.id)}
-                text={this.state.newComment.text}
-                onChangeNewComment={e => this.onChangeNewComment(e)}
-                onSubmitNewComment={e => this.onSubmitNewComment(e, item.id)}
-                key={item.id}
-              />
-            ))}
+        {queriedData.map(item => (
+          <PostsContainer
+            post={item}
+            incrementLikes={() => this.incrementLikes(item.id)}
+            onChangeNewComment={this.onChangeNewComment}
+            onSubmitNewComment={e => this.onSubmitNewComment(e, item.id)}
+            newCommentText={this.state.newCommentText}
+            key={item.id}
+          />
+        ))}
       </>
     )
   }

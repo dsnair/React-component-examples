@@ -22,6 +22,7 @@ const PostsContainer = props => {
           text={props.text}
           onChangeNewComment={props.onChangeNewComment}
           onSubmitNewComment={props.onSubmitNewComment}
+          newCommentText={props.newCommentText}
         />
         <p className="timestamp">{props.timestamp}</p>
       </div>
