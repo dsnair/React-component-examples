@@ -1,15 +1,9 @@
 import React from 'react'
-import './CommentsSection.css'
+import './CommentForm.css'
 
-const CommentsSection = props => {
+const CommentForm = props => {
   return (
     <>
-      {props.comments.map((item, index) => (
-        <p key={index}>
-          <span className="handlename">{`${item.username} `}</span>
-          {item.text}
-        </p>
-      ))}
       <form onSubmit={props.onSubmitNewComment} className="commentForm">
         <input
           onChange={props.onChangeNewComment}
@@ -22,4 +16,4 @@ const CommentsSection = props => {
     </>
   )
 }
-export default CommentsSection
+export default CommentForm

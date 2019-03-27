@@ -1,32 +1,37 @@
 import React from 'react'
 
-import CommentsSection from './CommentsSection'
-import './PostsContainer.css'
+import CommentForm from './CommentForm'
+import './Post.css'
 
-const PostsContainer = props => {
+const Post = props => {
   return (
-    <div className="postscontainer">
+    <div className="postcontainer">
       <header>
         <img src={props.post.thumbnailUrl} alt="avatar" className="avatar" />
         <p className="businessname">{props.post.username}</p>
       </header>
+
       <img src={props.post.imageUrl} alt="cover" />
-      <div className="commentscontainer">
+
+      <div className="commentcontainer">
         <p className="likes">
           <i className="far fa-heart" onClick={props.incrementLikes} />
           {props.post.likes} likes
         </p>
-        {/* <i className="far fa-comment" /> */}
-        <CommentsSection
-          comments={props.post.comments}
-          text={props.text}
+        {props.post.comments.map((item, index) => (
+          <p key={index}>
+            <span className="username">{`${item.username} `}</span>
+            {item.text}
+          </p>
+        ))}
+        <p className="timestamp">{props.post.timestamp}</p>
+        <CommentForm
+          newCommentText={props.newCommentText}
           onChangeNewComment={props.onChangeNewComment}
           onSubmitNewComment={props.onSubmitNewComment}
-          newCommentText={props.newCommentText}
         />
-        <p className="timestamp">{props.timestamp}</p>
       </div>
     </div>
   )
 }
-export default PostsContainer
+export default Post

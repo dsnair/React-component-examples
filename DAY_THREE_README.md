@@ -24,9 +24,9 @@
   - Make sure the app working as it was before since it has been re-factored now.
   - This is to ensure that we clean up our App component a little bit before we re-factor it to be wrapped up in an HOC.
 
-- [ ] Building the High Order Component
+- [ ] Build the High Order Component.
 
-  - Create a directory called `authentication`
+  - Create a directory called `authentication`.
   - Inside that directory create a HOC called `withAuthenticate`. This is where all of the magic is going to happen.
   - This component should be able to take in a component as an argument, and it will return a `class` component.
   - Inside of `withAuthenticate's` render method, you'll want to return the Component that gets passed into it.
@@ -46,7 +46,7 @@ const withAuthenticate = App =>
   }
 ```
 
-- [ ] Build out the LoginPage component. You can design it however you like.
+- [x] Build out the LoginPage component. You can design it however you like.
 
   - In your `components` directory, create a directory called `Login` and add a new file called `Login.js`.
   - There should be a `username` input, a `password` input, and a `Login` button.
@@ -54,7 +54,7 @@ const withAuthenticate = App =>
   - This login function should set a `username` on `localStorage`. You'll need to check local storage to see if a user is logged in.
   - Be sure to force the page to reload when a user logs in so that our component un-mounts and mounts again.
 
-- [ ] Extending the functionality of the HOC to conditionally render the `LoginPage` or the `App`
+- [ ] Extend the functionality of the HOC to conditionally render either the `LoginPage` or the `App`.
 
   - First, we need to change our `withAuthenticate` HOC to return a second function that will take in a second component (which will be the `LoginPage`). This will look like a "double arrow" function - `const withAuthenticate = PostsPage => LoginPage => {}`.
   - In `App.js`, we can now invoke the HOC function twice (which is called currying). The first time it's invoked, pass in `PostsPage`. The second time, pass in `LoginPage` (which you'll need to import here), i.e. - `export default higherOrderComp(FirstComponent)(SecondComponent)`.

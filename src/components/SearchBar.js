@@ -1,28 +1,33 @@
-import React from 'react'
+import React, { Component } from 'react'
 import './SearchBar.css'
 
-const SearchBar = props => {
-  return (
-    <div className="searchbar">
-      <div className="instagram">
-        <i className="fab fa-instagram" />
-        <span> Instagram</span>
+class SearchBar extends Component {
+  onClick = () => {
+    localStorage.removeItem('username')
+  }
+  render() {
+    return (
+      <div className="searchbar">
+        <div className="instaclone">
+          <i className="fab fa-instagram" />
+          <span> InstaClone</span>
+        </div>
+
+        <form className="searchForm">
+          <i className="fas fa-search" />
+          <input
+            onChange={this.props.searchPost}
+            type="search"
+            className="searchInput"
+            placeholder="Search by username"
+          />
+        </form>
+
+        <button onClick={this.onClick} className="logoutBtn">
+          Logout
+        </button>
       </div>
-      <form className="searchForm">
-        <i className="fas fa-search" />
-        <input
-          onChange={props.searchPost}
-          type="search"
-          className="searchInput"
-          placeholder="Search by username"
-        />
-      </form>
-      <div>
-        <i className="far fa-compass" />
-        <i className="far fa-heart" />
-        <i className="far fa-user" />
-      </div>
-    </div>
-  )
+    )
+  }
 }
 export default SearchBar

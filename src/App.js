@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 
 import data from './dummy-data'
 import SearchBar from './components/SearchBar'
-import PostsContainer from './components/PostsContainer/PostsContainer'
+import Post from './components/PostContainer/Post'
+import LoginPage from './components/LoginPage'
 import './App.css'
 
 class App extends Component {
@@ -65,9 +66,10 @@ class App extends Component {
 
     return (
       <>
+        <LoginPage />
         <SearchBar searchPost={this.searchPost} />
         {queriedData.map(item => (
-          <PostsContainer
+          <Post
             post={item}
             incrementLikes={() => this.incrementLikes(item.id)}
             onChangeNewComment={this.onChangeNewComment}

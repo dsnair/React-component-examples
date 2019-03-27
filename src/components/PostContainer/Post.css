@@ -1,4 +1,4 @@
-.postscontainer {
+.postcontainer {
   border: 1px solid gainsboro;
   margin-bottom: 20px;
 }
@@ -27,14 +27,18 @@ img {
   object-fit: cover;
 }
 
-.commentscontainer {
+.commentcontainer {
   padding: 20px;
 }
 
-.far {
-  margin-right: 10px;
+.likes {
+  font-weight: 500;
+}
+
+.fa-heart {
   font-size: 24px;
-  color: dimgrey;
+  color: lightslategrey;
+  margin-right: 10px;
 }
 
 .fa-heart:hover {
@@ -42,10 +46,11 @@ img {
   cursor: pointer;
 }
 
-.likes {
-  font-weight: 500;
+.username {
+  font-weight: 900;
 }
 
 .timestamp {
   color: grey;
+  font-size: 14px;
 }
