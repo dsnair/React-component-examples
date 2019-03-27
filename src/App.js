@@ -3,12 +3,13 @@ import React, { Component } from 'react'
 import data from './dummy-data'
 import SearchBar from './components/SearchBar'
 import PostsContainer from './components/PostsContainer/PostsContainer'
-
 import './App.css'
 
 class App extends Component {
   state = {
-    data: []
+    data: [],
+    queriedData: [],
+    query: ''
   }
 
   componentDidMount() {
@@ -28,17 +29,36 @@ class App extends Component {
     })
   }
 
+  searchPost = e => {
+    const query = e.target.value
+    const queriedData = this.state.data.filter(post =>
+      post.username.includes(this.state.query)
+    )
+    this.setState({
+      query,
+      queriedData
+    })
+  }
+
   render() {
     return (
       <>
-        <SearchBar />
-        {this.state.data.map((item, index) => (
-          <PostsContainer
-            post={item}
-            incrementLikes={() => this.incrementLikes(index)}
-            key={index}
-          />
-        ))}
+        <SearchBar searchPost={this.searchPost} />
+        {this.state.query
+          ? this.state.queriedData.map((item, index) => (
+              <PostsContainer
+                post={item}
+                incrementLikes={() => this.incrementLikes(index)}
+                key={index}
+              />
+            ))
+          : this.state.data.map((item, index) => (
+              <PostsContainer
+                post={item}
+                incrementLikes={() => this.incrementLikes(index)}
+                key={index}
+              />
+            ))}
       </>
     )
   }
