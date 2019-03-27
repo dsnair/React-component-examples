@@ -31,7 +31,7 @@ class PostPage extends Component {
       comments: [
         ...newData[id].comments,
         {
-          username: 'divya',
+          username: localStorage.getItem('username'),
           text: this.state.newCommentText
         }
       ]

@@ -66,8 +66,8 @@ const withAuthenticate = App =>
 
 #### Stretch Problems (Day III)
 
-- [ ] Now that you have a user set in `localStorage`, use that `username` to be the one commenting on the posts.
-- Styled-Components
+- [x] Now that you have a user set in `localStorage`, use that `username` to be the one commenting on the posts.
+- [ ] Styled-Components
 
   - Watch this video about [styled-components](https://youtu.be/bIK2NwoK9xk) in its entirety.
   - Head over to the [Styled-Components docs](https://www.styled-components.com/) and learn about the library.
