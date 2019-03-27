@@ -9,7 +9,11 @@ class App extends Component {
   state = {
     data: [],
     queriedData: [],
-    query: ''
+    query: '',
+    newComment: {
+      username: 'divya',
+      text: ''
+    }
   }
 
   componentDidMount() {
@@ -18,11 +22,27 @@ class App extends Component {
     })
   }
 
-  incrementLikes = index => {
+  onChangeNewComment = e => {
+    this.setState({
+      newComment: {
+        ...this.state.newComment,
+        text: e.target.value
+      }
+    })
+  }
+
+  onSubmitNewComment = (e, id) => {
+    e.preventDefault()
+    let newState = this.state
+    newState.data[id].comments.push(newState.newComment)
+    this.setState(newState)
+  }
+
+  incrementLikes = id => {
     const newData = [...this.state.data]
-    newData.splice(index, 1, {
-      ...newData[index],
-      likes: newData[index].likes + 1
+    newData.splice(id, 1, {
+      ...newData[id],
+      likes: newData[id].likes + 1
     })
     this.setState({
       data: [...newData]
@@ -45,18 +65,21 @@ class App extends Component {
       <>
         <SearchBar searchPost={this.searchPost} />
         {this.state.query
-          ? this.state.queriedData.map((item, index) => (
+          ? this.state.queriedData.map(item => (
               <PostsContainer
                 post={item}
-                incrementLikes={() => this.incrementLikes(index)}
-                key={index}
+                incrementLikes={() => this.incrementLikes(item.id)}
+                key={item.id}
               />
             ))
-          : this.state.data.map((item, index) => (
+          : this.state.data.map(item => (
               <PostsContainer
                 post={item}
-                incrementLikes={() => this.incrementLikes(index)}
-                key={index}
+                incrementLikes={() => this.incrementLikes(item.id)}
+                text={this.state.newComment.text}
+                onChangeNewComment={e => this.onChangeNewComment(e)}
+                onSubmitNewComment={e => this.onSubmitNewComment(e, item.id)}
+                key={item.id}
               />
             ))}
       </>

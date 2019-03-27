@@ -17,7 +17,12 @@ const PostsContainer = props => {
           {props.post.likes} likes
         </p>
         {/* <i className="far fa-comment" /> */}
-        <CommentsSection comments={props.post.comments} />
+        <CommentsSection
+          comments={props.post.comments}
+          text={props.text}
+          onChangeNewComment={props.onChangeNewComment}
+          onSubmitNewComment={props.onSubmitNewComment}
+        />
         <p className="timestamp">{props.timestamp}</p>
       </div>
     </div>

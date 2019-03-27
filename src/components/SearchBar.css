@@ -10,7 +10,7 @@
   font-size: 24px;
 }
 
-form {
+.searchForm {
   display: flex;
   align-content: center;
   width: 300px;
@@ -27,7 +27,7 @@ form {
   color: white;
 }
 
-input {
+.searchInput {
   width: 270px;
   padding: 0 5px;
   border: 1px solid lightslategray;

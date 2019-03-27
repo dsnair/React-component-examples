@@ -10,7 +10,15 @@ const CommentsSection = props => {
           {item.text}
         </p>
       ))}
-      <textarea placeholder="Add a comment" wrap="soft" rows="5" />
+      <form onSubmit={props.onSubmitNewComment} className="commentForm">
+        <input
+          onChange={props.onChangeNewComment}
+          value={props.text}
+          type="text"
+          className="commentInput"
+          placeholder="Add a comment"
+        />
+      </form>
     </>
   )
 }

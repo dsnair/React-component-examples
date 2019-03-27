@@ -8,13 +8,13 @@ const SearchBar = props => {
         <i className="fab fa-instagram" />
         <span> Instagram</span>
       </div>
-      <form>
+      <form className="searchForm">
         <i className="fas fa-search" />
         <input
           onChange={props.searchPost}
           type="search"
+          className="searchInput"
           placeholder="Search by username"
-          height="100"
         />
       </form>
       <div>
