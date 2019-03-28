@@ -1,0 +1,13 @@
+.commentForm {
+  width: 100%;
+}
+
+.commentInput {
+  outline: none;
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid whitesmoke;
+  font-size: 14px;
+}

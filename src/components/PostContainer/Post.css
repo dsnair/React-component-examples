@@ -1,0 +1,56 @@
+.postcontainer {
+  border: 1px solid gainsboro;
+  margin-bottom: 20px;
+}
+
+header {
+  display: flex;
+  align-content: center;
+  margin: 10px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  align-self: center;
+}
+
+.businessname {
+  font-weight: 900;
+  padding-left: 10px;
+}
+
+img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.commentcontainer {
+  padding: 20px;
+}
+
+.likes {
+  font-weight: 500;
+}
+
+.fa-heart {
+  font-size: 24px;
+  color: lightslategrey;
+  margin-right: 10px;
+}
+
+.fa-heart:hover {
+  color: red;
+  cursor: pointer;
+}
+
+.username {
+  font-weight: 900;
+}
+
+.timestamp {
+  color: grey;
+  font-size: 14px;
+}
