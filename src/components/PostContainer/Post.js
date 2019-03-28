@@ -1,4 +1,6 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+
 import styled from 'styled-components'
 import { Heart } from 'styled-icons/fa-solid'
 import CommentForm from './CommentForm'
@@ -83,4 +85,13 @@ const Post = props => {
     </PostContainer>
   )
 }
+
+Post.propTypes = {
+  post: PropTypes.object,
+  incrementLikes: PropTypes.func.isRequired,
+  newCommentText: PropTypes.string,
+  onChangeNewComment: PropTypes.func.isRequired,
+  onSubmitNewComment: PropTypes.func.isRequired
+}
+
 export default Post

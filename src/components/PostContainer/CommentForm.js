@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 const Form = styled.form`
@@ -29,4 +30,11 @@ const CommentForm = props => {
     </>
   )
 }
+
+CommentForm.propTypes = {
+  onSubmitNewComment: PropTypes.func.isRequired,
+  onChangeNewComment: PropTypes.func.isRequired,
+  newCommentText: PropTypes.string
+}
+
 export default CommentForm

@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+
 import styled from 'styled-components'
 import { Instagram } from 'styled-icons/boxicons-logos'
 import { Search } from 'styled-icons/boxicons-regular'
@@ -80,4 +82,9 @@ class SearchBar extends Component {
     )
   }
 }
+
+SearchBar.propTypes = {
+  searchPost: PropTypes.func.isRequired
+}
+
 export default SearchBar
