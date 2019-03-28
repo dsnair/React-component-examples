@@ -1,11 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Heart } from 'styled-icons/fa-solid'
 import CommentForm from './CommentForm'
-import './Post.css'
 
-const Container = styled.div`
+const PostContainer = styled.div`
   border: 1px solid gainsboro;
   margin-bottom: 20px;
+`
+
+const CommentContainer = styled.div`
+  padding: 20px;
 `
 
 const Header = styled.header`
@@ -14,35 +18,69 @@ const Header = styled.header`
   margin: 10px;
 `
 
+const Avatar = styled.img`
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  align-self: center;
+`
+
+const CoverImage = styled.img`
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+`
+
+const HeartIcon = styled(Heart)`
+  margin-right: 10px;
+  color: palevioletred;
+  :hover {
+    color: red;
+    cursor: pointer;
+  }
+`
+
+const PostName = styled.p`
+  font-weight: 900;
+  padding-left: 10px;
+`
+
+const TimeStamp = styled.p`
+  color: grey;
+  font-size: 14px;
+`
+
+const Span = styled.span`
+  font-weight: ${props => (props.bold ? 900 : 500)};
+`
+
 const Post = props => {
   return (
-    <div className="postcontainer">
-      <header>
-        <img src={props.post.thumbnailUrl} alt="avatar" className="avatar" />
-        <p className="businessname">{props.post.username}</p>
-      </header>
+    <PostContainer>
+      <Header>
+        <Avatar src={props.post.thumbnailUrl} alt="avatar" />
+        <PostName>{props.post.username}</PostName>
+      </Header>
 
-      <img src={props.post.imageUrl} alt="cover" />
+      <CoverImage src={props.post.imageUrl} alt="cover" />
 
-      <div className="commentcontainer">
-        <p className="likes">
-          <i onClick={props.incrementLikes} className="far fa-heart" />
-          {props.post.likes} likes
-        </p>
+      <CommentContainer>
+        <HeartIcon onClick={props.incrementLikes} size="22" />
+        <Span>{props.post.likes} likes</Span>
         {props.post.comments.map((item, index) => (
           <p key={index}>
-            <span className="username">{`${item.username} `}</span>
+            <Span bold>{`${item.username} `}</Span>
             {item.text}
           </p>
         ))}
-        <p className="timestamp">{props.post.timestamp}</p>
+        <TimeStamp>{props.post.timestamp}</TimeStamp>
         <CommentForm
           newCommentText={props.newCommentText}
           onChangeNewComment={props.onChangeNewComment}
           onSubmitNewComment={props.onSubmitNewComment}
         />
-      </div>
-    </div>
+      </CommentContainer>
+    </PostContainer>
   )
 }
 export default Post

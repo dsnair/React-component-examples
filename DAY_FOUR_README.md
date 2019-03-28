@@ -16,12 +16,13 @@
 
 - [x] Re-factor `SearchBar` to use `styled-components`.
 
-- [ ] Create a `Header` styled-component.header that wraps your entire SearchBar.
-  - We recommend working left to right, so begin changing out your styles on the instagram logo.
-  - Create a `LogoHeader` styled-component.div.
-  - Create a `LogoImage` styled-component.img that fills-in the background.
+  - Create a `Header` styled-component.header that wraps your entire SearchBar.
+    - We recommend working left to right, so begin changing out your styles on the Instagram logo.
+    - Create a `LogoHeader` styled-component.div.
+    - Create a `LogoImage` styled-component.img that fills-in the background.
 
-- [ ] Re-factor your `PostContainer` component to only use styled-components.
+- [x] Re-factor your `PostContainer` component to only use styled-components.
+
   - Start with the `UserThumbnail` and `Username`.
   - Note that the `Username` styles could most certainly be used by your `CommentSection` component as well.
   - To achieve this, you'll simply just build out your reusable `styled-component` inside of a `Styles/Reusables` directory. This is where you could store all of your reusable styled-components and export them out of their respective files to then import them for reuse.
