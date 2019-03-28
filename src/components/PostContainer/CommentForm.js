@@ -1,18 +1,31 @@
 import React from 'react'
-import './CommentForm.css'
+import styled from 'styled-components'
+
+const Form = styled.form`
+  width: 100%;
+`
+
+const Input = styled.input`
+  outline: none;
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid whitesmoke;
+  font-size: 14px;
+`
 
 const CommentForm = props => {
   return (
     <>
-      <form onSubmit={props.onSubmitNewComment} className="commentForm">
-        <input
+      <Form onSubmit={props.onSubmitNewComment}>
+        <Input
           onChange={props.onChangeNewComment}
           value={props.newCommentText}
           type="text"
-          className="commentInput"
           placeholder="Add a comment"
         />
-      </form>
+      </Form>
     </>
   )
 }

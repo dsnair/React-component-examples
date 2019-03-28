@@ -1,7 +1,18 @@
 import React from 'react'
-
+import styled from 'styled-components'
 import CommentForm from './CommentForm'
 import './Post.css'
+
+const Container = styled.div`
+  border: 1px solid gainsboro;
+  margin-bottom: 20px;
+`
+
+const Header = styled.header`
+  display: flex;
+  align-content: center;
+  margin: 10px;
+`
 
 const Post = props => {
   return (
