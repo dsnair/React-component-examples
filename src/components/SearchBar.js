@@ -3,7 +3,7 @@ import './SearchBar.css'
 
 class SearchBar extends Component {
   onClick = () => {
-    localStorage.removeItem('username')
+    localStorage.clear()
     window.location.reload();
   }
 

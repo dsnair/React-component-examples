@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import data from '../dummy-data'
+import dataFile from '../dummy-data'
 import SearchBar from './SearchBar'
 import Post from './PostContainer/Post'
 
@@ -13,7 +13,9 @@ class PostPage extends Component {
 
   componentDidMount() {
     this.setState({
-      data
+      data: localStorage.getItem('dataWithNewComments')
+        ? JSON.parse(localStorage.getItem('dataWithNewComments'))
+        : dataFile
     })
   }
 
@@ -36,6 +38,7 @@ class PostPage extends Component {
         }
       ]
     })
+    localStorage.setItem('dataWithNewComments', JSON.stringify([...newData]))
     this.setState({ data: [...newData], newCommentText: '' })
   }
 
