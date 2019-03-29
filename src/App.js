@@ -1,11 +1,16 @@
 import React from 'react'
-
-import LoginPage from './components/LoginPage'
-import PostPage from './components/PostPage'
-import './App.css'
+import TopBar from './components/TopBar'
+import Header from './components/Header'
+import Content from './components/Content/Content'
 
 const App = () => {
-  return localStorage.getItem('username') ? <PostPage /> : <LoginPage />
+  return (
+    <div className="App">
+      <TopBar />
+      <Header />
+      <Content />
+    </div>
+  )
 }
 
 export default App

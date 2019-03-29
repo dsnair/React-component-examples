@@ -1,65 +1,90 @@
-# React-Insta-Clone
+# Sprint Challenge: Lambda Times (React)
 
-## Introduction
+This challenge allows you to practice the concepts and techniques learned over the past Sprint and apply them in a concrete project. This Sprint explored Intermediate React, React Tooling, The React Life-cycle, React Composition Patterns and CSS-in-JS. In this Sprint Challenge, you will demonstrate proficiency by creating an application that uses to build a fully-functioning replicate of the LA-Times website.
 
-- The purpose of this project is to continue building on your knowledge of React that you have gained thus far.
+Remember, this is a way for you to analyze your understanding of the concepts presented this week. Feel free to reference old code, but please refrain from copy/pasting, even rewriting old code can teach you something new! Take your time, and have fun!
 
-  - Here, you'll be implementing a lot of the same concepts that you have been in previous projects, in a very similar fashion.
-  - The main difference this time around is that you'll be using the `create-react-app (CRA)` utility to generate your React project for you.
-  - Don't worry about all of the extra files that you may not understand which will be present inside your React application that you will build with CRA.
-  - The overall structure of the project remains exactly the same as what you worked with in Todo-React.
+## Instructions
 
-- This project will be worked on throughout the entire week.
+**Read these instructions carefully. Understand exactly what is expected _before_ starting this Sprint Challenge.**
 
-  - Each day as you learn new things, you will use that knowledge to build and enhance this project a little more.
-  - You will use the same repo throughout the whole week, adding more code, and changing things here and there as you learn new principles and techniques.
-  - It will be important to communicate any problems you're having to your Project Manager so that we can make sure to get you un-stuck along the way as soon as possible.
-  - The goal is to finish each day's objectives, and have a working project to start with on the next day.
-  - If you don't get the daily objectives, don't panic, some days will be easier for you than others and some days will be harder.
-  - The hope is that by the end of the week, you'll have seen a react application come to life, and you'll start to see how react works at a higher level.
+This is an individual assessment. All work must be your own. Your challenge score is a measure of your ability to work independently using the material covered through this sprint. You need to demonstrate proficiency in the concepts and objectives introduced and practiced in preceding days.
 
-- For this project, you'll be building a simple Instagram clone using React.
-- There is a file provided called `dummy-data.js` that contains some mock data. Each object in the mock data represents a faux Instagram post.
-- Your React application will receive faux post data and render each as a separate Instagram post.
+You are not allowed to collaborate during the Sprint Challenge. However, you are encouraged to follow the twenty-minute rule and seek support from your PM and Instructor in your cohort help channel on Slack. Your work reflects your proficiency Intermediate React and your command of the concepts and techniques in the React Tooling, The React Life-cycle, React Composition Patterns and CSS-in-JS modules.
 
-## Day I
+You have three hours to complete this challenge. Plan your time accordingly.
 
-### Focus (Day I)
+## Commits
 
-- Demonstrate the the ability to use create-react-app to boilerplate a react application
-- Describe and be able to use PropTypes to 'type check' specific data being passed down to a child component
-- Demonstrate the ability to use defaultProps in a React component
+Commit your code regularly and meaningfully. This helps both you (in case you ever need to return to old code for any number of reasons and your project manager).
 
-### Project Setup
+## Description
 
-- If you so choose you may install `create-react-app` globally by running `yarn global add create-react-app`.
-  - If you have CRA installed then run `create-react-app instagram` to create your starter application with the name `instagram`.
-  - If you don't have CRA installed then run `npx create-react-app instagram` to create your starter application with the name `instagram`.
-- Create a `components` directory inside the `src` directory, and then create a sub-directory called `SearchBar`, another one called `PostContainer`, and lastly one called `CommentSection`, all inside the `src` directory. Each of these directories should contain the component file as well as the CSS for their respective components. You'll also want to put any other components that coincide with your respective container components inside of these directories.
-![folder_structure](/assets/folder_structure.png)
+For the Lambda Times challenge you will create a React application that replicates the[LA Times Website](http://www.latimes.com). Throughout this challenge, you will take the [vanilla JS Lambda Times app](https://github.com/LambdaSchool/Sprint-Challenge-Applied-Javascript) you built before and convert it to a React app. Much of the initial work has been done, but there are some missing pieces you will need to complete to get the app working properly.
 
-### Tasks (Day I)
+Your base React app has already been created, and includes some components. Included as well is a CSS file that you may reference when writing your own code.
 
-- [x] There are three major container components that you'll need to implement for this project: the Search Bar, the Post Container, and the Comment Section.
-- [x] At the end of Day I, there will be a single instance of the Search Bar being rendered at the top of the page, as well as a Post Container and a Comment Section for every piece of mock data in the `dummy-data.js` file.
-- [x] The root App component of your application should import the dummy data from the `dummy-data.js` file with `import dummyData from './dummy-data';` and iterate over said data, passing each individual object as a prop to an instance of `PostContainer`.
-- [x] Each `PostContainer` component will then pass the array of comments on each post object as a prop to an instance of the `CommentSection` component.
-- [x] The `CommentSection` component will receive the array of comments as props and render a `Comment` component with the username of the poster as well as the post's text. Additionally, there should be an input box that allows users to submit a new comment for any post. We'll work on posting new comments tomorrow.
-- [x] Be sure to check the `Types` of the data you are passing around as props in the components that will be using props to present data as DOM elements. This should be linked to your `Comment` component that `Comment Section` will render and potentially to your `Post` component that `Post Container` will render.
-- You are free to leverage the Bootstrap library for this project for the purposes of theming and styling. I recommend the awesome [reactstrap](https://reactstrap.github.io/) library, which is a library of Bootstrap components that have been implemented using React, so they're really easy to just drop straight into React projects.
-- [x] In addition to Bootstrap for theming, you'll want to add your own styles via CSS. To keep things organized, have the CSS file that corresponds with a component live in the same directory as the component file.
+Look through the application code. If you have the old Lambda Times (Applied JavaScript) sprint challenge handy, you may compare how the structure of this app differs from that, noting how React gives us very easy to use concise components.
 
----
+## Self-Study/Essay Questions
 
-Your search bar header should look something like this:
-![search bar](/assets/search_bar.png)
+- [x] What are PropTypes used for? Please describe why it's important to type check our data in JavaScript.
 
----
+> PropTypes are used to check if the data that a component receives via props is of the valid, expected type. If this validation fails, the console will print warnings. This is helpful to catch bugs.
 
-Your post container should look something like this:
-![insta post](/assets/post.png)
+- [x] Describe a life-cycle event in React?
 
-### Stretch Problems (Day I)
+> React has the following three phases:
+> 1. Mount - component is created and inserted into the React DOM
+> 2. Update - component re-renders due to updates to its state or props
+> 3. Unmount - component is removed from React DOM
+> The lifecycle methods give you access to manipulate the DOM during these phases.
 
-- [x] Implement the ability to comment on a post with the `Add a comment...` input.
-- [ ] Use the [moment.js](https://momentjs.com/) library dynamically format the timestamp into a human-readable format like how it is being displayed in the screenshot.
+- [x] Explain the details of a Higher Order Component?
+
+> HOC is a component that takes-in a component as an argument and returns a new component. 
+> HOCs are used to share common logic between components. 
+> They can also be used for conditional rendering, i.e. when two components are passed-in, you can use some logic to determine which one gets rendered.
+
+- [x] What are three different ways to style components in React? Explain some of the benefits of each.
+
+> Vanilla CSS - gives you full control on each styling element
+> Preprocessors or Styled-components - gives you full control on each styling element along with being able to use functions, variables, and loops for logic
+> Libraries, such as MaterialUI - gives you all the styling ready-to-go out-of-the-box
+
+## Project Setup
+
+Follow these steps to set up your project:
+
+- Create a forked copy of this project.
+- Add your project manager as collaborator on Github.
+- Clone your OWN version of the repository (Not Lambda's by mistake!).
+- Create a new branch: git checkout -b `<firstName-lastName>`.
+- Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
+- Push commits: git push origin `<firstName-lastName>`.
+- Run `yarn install` and then `yarn start`. This will open your locally hosted application in your browser. Once you are ready move onto the next steps.
+- Inside the `Content` folder you will find all 5 components that make up the content of the application. The flow goes like this: `Content > Tabs > Tab` and `Content > Cards > Card`. Follow the directions in the `Content` component to get your data ready.
+
+Follow these steps for completing your project.
+
+- Submit a Pull-Request to merge <firstName-lastName> branch into master (student's Repository). **Please don't merge your own pull request**
+- Add your project manager as a reviewer on the pull-request.
+- Your project manager will count the project as complete by merging the branch back into master.
+
+## Minimum Viable Product
+
+- [x] Go through the `Tabs`, `Tab`, `Cards`, and `Card` components following the instructions, and passing data and props to get the tabs and cards to appear on the screen.
+- [x] Once the Tabs and Cards are rendering to the screen, complete the `changeSelected` and `filterCards` functions in the `Content` component.
+- [x] You should now be able to filter cards using your tabs!
+- [x] Make sure all of your props being passed are validated using PropTypes.
+- [x] Find the `TopBar` and `Header` components. Convert these two components to Styled Components. You should not have any `className` props when you are finished.
+
+## Stretch Challenge
+
+There are multiple stretch challenges available to you, you may attempt these in any order. Remember, stretch challenges are only to give you extra time to work on these concepts, if you do not get to these challenges, that is fine! Continue working on your main objectives.
+
+- [ ] Re-factor the app, so that it uses ALL styled components. There should be no `className` props on any component. To truly test this, delete the CSS file.
+
+- [x] You will find a `Carousel` component in your Content folder. Complete this component, rendering a functional carousel. Add this component between your `Tabs` and `Cards` components within the `Content` component. Added challenge: make it so that there is infinite scroll to the right and the left.
+
+- [ ] Add a login and an HOC. Make it so that when a user clicks on the login button at the top, a login modal is shown (Use Reactstrap). Have a user login, validating the login credentials on the `localStorage`. Add a Higher Order Component that wraps the `Content` component, only allowing it to render once a user has logged in. For more instructions see this README: [React-Insta-Clone: Day III](https://github.com/LambdaSchool/React-Insta-Clone/blob/master/DAY_THREE_README.md#tasks-day-iii)
