@@ -17,18 +17,11 @@ export default class Carousel extends Component {
   }
 
   leftClick = index => {
-    this.setState({
-      index:
-        index > -carouselData.length && index < 0
-          ? Math.abs(index - 1)
-          : index === 0
-          ? carouselData.length - 1
-          : index - 1
-    })
+    this.setState({ index: (((index - 1) % 4) + 4) % 4 })
   }
 
   rightClick = index => {
-    this.setState({ index: index === carouselData.length - 1 ? 0 : index + 1 })
+    this.setState({ index: (index + 1) % 4 })
   }
 
   selectedImage = () => {
